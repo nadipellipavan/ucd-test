@@ -1,0 +1,28 @@
+---
+product: "1.0.0"
+info:
+  name: "banka"
+  title: "bankA"
+  version: "1.0.0"
+visibility:
+  view:
+    enabled: true
+    type: "public"
+    tags: []
+    orgs: []
+  subscribe:
+    enabled: true
+    type: "authenticated"
+    tags: []
+    orgs: []
+apis:
+  banka:
+    id: "57befdd1e4b05c7043212b36"
+plans:
+  default:
+    title: "Default Plan"
+    description: "Default Plan"
+    approval: false
+    rate-limit:
+      hard-limit: false
+      value: "100/hour"

@@ -1,0 +1,35 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "bankA"
+  x-ibm-name: "banka"
+host: "$(catalog.host)"
+basePath: "/bank"
+paths:
+  /loans/GetmonthlyPaymentAmount:
+    get:
+      responses:
+        200:
+          description: "200 OK"
+securityDefinitions:
+  clientID:
+    description: ""
+    in: "header"
+    name: "X-IBM-Client-Id"
+    type: "apiKey"
+security:
+- clientID: []
+x-ibm-configuration:
+  assembly:
+    execute:
+    - invoke:
+        target-url: "http://banka.mybluemix.net/loans/v1/quote?loanAmount=20000&annualInterestRate=0.9&termInMonths=52"
+  enforced: true
+  testable: true
+  phase: "realized"
+  cors:
+    enabled: true
+  gateway: "datapower-gateway"
+schemes:
+- "https"
